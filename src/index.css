@@ -123,17 +123,31 @@
 .pokemon-details img {
 	width: 200px;
 	height: auto;
-	transform: rotateY(45deg);
-	animation: rotateAnimation 1s linear infinite;
+	/* transform: rotateY(45deg);
+	animation: rotateAnimation 1s linear infinite; */
   transition: all 0.2s ease-in-out;
+  animation: shake 0.5s;
+  animation-iteration-count: infinite;
+
 
 }
-
+@keyframes shake {
+  0% { transform: translate(1px, 1px) rotate(0deg); }
+  10% { transform: translate(-1px, -2px) rotate(-1deg); }
+  20% { transform: translate(-3px, 0px) rotate(1deg); }
+  30% { transform: translate(3px, 2px) rotate(0deg); }
+  40% { transform: translate(1px, -1px) rotate(1deg); }
+  50% { transform: translate(-1px, 2px) rotate(-1deg); }
+  60% { transform: translate(-3px, 1px) rotate(0deg); }
+  70% { transform: translate(3px, 1px) rotate(-1deg); }
+  80% { transform: translate(-1px, -1px) rotate(1deg); }
+  90% { transform: translate(1px, 2px) rotate(0deg); }
+  100% { transform: translate(1px, -2px) rotate(-1deg); }
+}
 @keyframes rotateAnimation {
 	from {transform: rotateY(45deg);}
 	to {transform: rotateY(225deg);}
 }
-
 .pokemon-details h2 {
   font-size: 30px;
   text-align: center;
